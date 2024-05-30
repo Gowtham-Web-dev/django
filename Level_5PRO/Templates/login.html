@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'basci.html' %}
+
+{% block body-block %}
+
+<h1>The login</h1>
+<form action="{% url 'Level5_pro:login' %}" method="POST">
+    {% csrf_token %}
+    <label for="">username</label>
+<input type="text" name="username" id="">
+<label for="">Password</label>
+<input type="password" name="password">
+<input type="submit" value="Login">
+ </form>
+
+{% endblock %}

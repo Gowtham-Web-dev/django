@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+{% extends 'basci.html' %}
+{% load static %}
+
+
+{% block body-block %}
+<h1>The register</h1>
+
+{% if register %}
+<h1>Thank you</h1>
+
+{% else %}
+
+<h1>Register Here</h1>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  {{user_form.as_p}}
+  {{profile_form.as_p}}
+    <input type="submit">
+</form>
+{% endif %}
+
+
+
+{% endblock %}
